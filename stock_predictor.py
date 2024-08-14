@@ -19,7 +19,8 @@ stock_ticker = st.text_input("Enter the stock ticker symbol (e.g., 'AAPL' for Ap
 # Load the data for the specified stock ticker
 if stock_ticker:
     st.write(f"Loading data for {stock_ticker}...")
-    data = yf.download(stock_ticker, start="2010-01-01", end="2023-12-31")
+    data = yf.download(stock_ticker, start="2022-01-01", end="2023-12-31")
+
     plt.figure(figsize = (16,8))
     plt.plot(data['Close'], label = 'Closing Price')
     st.pyplot(plt)
